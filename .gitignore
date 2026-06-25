@@ -1,0 +1,15 @@
+# OS / editor junk
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# deps / build
+node_modules/
+out/
+*.log
+.env
+.env.*
+
+# rendered outputs (re-render from source). NOTE: example sample images (.png) are kept.
+*.mp4
+*.mov

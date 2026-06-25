@@ -1,0 +1,9 @@
+{
+  "imageWidth": 1100,
+  "imageHeight": 1420,
+  "_note": "boxes are Tesseract OCR unions (native image px) of the two body phrases",
+  "phrases": [
+    { "text": "government shutdown", "x": 143, "y": 420, "w": 327, "h": 32, "start": 34 },
+    { "text": "funding lapses", "x": 112, "y": 550, "w": 220, "h": 32, "start": 52 }
+  ]
+}
