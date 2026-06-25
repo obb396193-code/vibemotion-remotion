@@ -9,7 +9,9 @@
 - `public/article.png` —— 样例文章图(**替身**,含 "government shutdown"/"funding lapses";换成你的真图即可)。
 - `package.json` —— 依赖(remotion / roughjs / react…)。
 
-## 跑(放进一个 Remotion 工程里)
+## 跑(本目录是 drop-in 源文件,不是独立工程)
+> ⚠️ 这里只有源文件 + 样例图;`tsconfig.json` / `remotion.config.ts` / eslint 配置都来自 create-video 工程。**别单独在本目录跑**——按下面把文件 cp 进一个 `create-video` 工程再渲。
+
 ```bash
 # 1) 一个 Remotion 工程(无则建),把本目录的 *.tsx/index.ts 放进 src/、article.png 放进 public/
 npx create-video@latest --yes --blank --no-tailwind myvid && cd myvid
@@ -24,6 +26,8 @@ bash ../../scripts/render.sh ArticleHighlight out/article.mp4
 ## 换成你的图
 1. 你的图 → `public/article.png`
 2. `python ../../scripts/ocr-to-highlights.py public/article.png "词1" "词2" --out src/highlights.json`
+   - 词在标题+正文都出现时,脚本默认取**最下面**的(≈正文)并 WARN 列出所有候选;要别的加 `--occurrence first|N`。
+   - 任一词没找到 → 脚本 `exit 1` 报错(不会静默出空高亮)。
 3. 重渲。合成代码不用动(全读 `highlights.json`)。
 
 详见 `../../references/recipe-article-highlight.md` 和 `../../references/remotion-gotchas.md`。

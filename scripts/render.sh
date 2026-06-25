@@ -13,9 +13,15 @@ OUT="${2:?usage: render.sh <CompId> <out.mp4> [flags]}"
 shift 2
 
 # Prefer a clean chrome-headless-shell; fall back through known locations.
+# macOS playwright cache:
 BIN="$(ls -dt "$HOME"/Library/Caches/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-*/chrome-headless-shell 2>/dev/null | head -1)"
+# Linux playwright cache:
+[ -z "$BIN" ] && BIN="$(ls -dt "$HOME"/.cache/ms-playwright/chromium_headless_shell-*/chrome-linux*/chrome-headless-shell 2>/dev/null | head -1)"
+# Remotion's own downloaded shell:
 [ -z "$BIN" ] && BIN="$(find ./node_modules/.remotion -name chrome-headless-shell -type f 2>/dev/null | head -1)"
+# full Chrome-for-Testing (mac, then linux):
 [ -z "$BIN" ] && BIN="$(ls -dt "$HOME"/Library/Caches/ms-playwright/chromium-*/chrome-mac-*/"Google Chrome for Testing.app"/Contents/MacOS/"Google Chrome for Testing" 2>/dev/null | head -1)"
+[ -z "$BIN" ] && BIN="$(ls -dt "$HOME"/.cache/ms-playwright/chromium-*/chrome-linux*/chrome 2>/dev/null | head -1)"
 
 if [ -z "$BIN" ]; then
   echo "No clean headless-shell found; fetching once (slow over proxy — export all_proxy=http://127.0.0.1:12000 if it stalls)..."

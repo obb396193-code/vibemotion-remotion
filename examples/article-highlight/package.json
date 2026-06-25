@@ -1,18 +1,16 @@
 {
-  "name": "remotion-shutdown",
+  "name": "article-highlight",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Remotion article-highlight (vibemotion-remotion example) — no tailwind",
   "repository": {},
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.483",
-    "@remotion/tailwind-v4": "4.0.483",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.483",
-    "roughjs": "^4.6.6",
-    "tailwindcss": "4.0.0"
+    "roughjs": "^4.6.6"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.483",
@@ -27,8 +25,5 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
-  },
-  "sideEffects": [
-    "*.css"
-  ]
+  }
 }
