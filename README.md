@@ -1,6 +1,6 @@
 # vibemotion-remotion
 
-A **growing library of Remotion video recipes**, packaged as a Claude skill — the sibling of **vibemotion** (which makes pure-code motion-graphics via HyperFrames). Reach for this one when a video is **material-heavy** (lots of local images / footage), needs **OCR-positioned highlights / annotations**, or wants **batch / parametrized** output.
+A **growing library of Remotion video recipes**, packaged as a Claude skill — the sibling of **[vibemotion-hyperframes](https://github.com/obb396193-code/vibemotion-hyperframes)** (pure-code motion-graphics via HyperFrames). Reach for this one when a video is **material-heavy** (lots of local images / footage), needs **OCR-positioned highlights / annotations**, or wants **batch / parametrized** output.
 
 > This is an **agent skill**: the entry point is [`SKILL.md`](SKILL.md). This README is the human-facing overview.
 
